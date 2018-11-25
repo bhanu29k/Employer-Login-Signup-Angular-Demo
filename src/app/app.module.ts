@@ -7,12 +7,14 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import { SubscriptionFeeComponent } from './subscription-fee/subscription-fee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SubscriptionFeeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpHeaders,HttpClient} from '@angular/common/http';
 import {LoginSignup} from './login-signup'
+import { SubscriptionFeeDetails } from './subscription-fee-details';
 
 const httpOptions={
   headers: new HttpHeaders({
@@ -28,6 +29,10 @@ export class LoginSignupService {
 
   public addUser(loginsignup) {
     return this.http.post<LoginSignup>(this.userUrl+"/employer/signup/emp",loginsignup);
+  }
+  
+  public addFeeDetails(feeDetails) {
+    return this.http.post<SubscriptionFeeDetails>(this.userUrl+"/employer/payfee",feeDetails);
   }
   
   

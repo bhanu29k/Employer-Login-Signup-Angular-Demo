@@ -52,9 +52,13 @@ export class LoginComponent implements OnInit {
            if(this.logSignNew==null)
            alert("email id already registered! Please registered with another email id");
            else
-            alert("User created SuccessFully.");
+           {
            
+            alert("User created SuccessFully.");
+            this.router.navigate(["/fee"]);
+        }
         });
+
 }
 logInComp()
 {
