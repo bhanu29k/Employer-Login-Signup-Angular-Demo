@@ -15,7 +15,7 @@ export class SubscriptionFeeComponent implements OnInit {
   subscriptionFeeForm:FormGroup;
   submitted=false;
   subscriptionFeeDetailObj : SubscriptionFeeDetails=new SubscriptionFeeDetails(); 
-  subscriptionFeeDetailObjNew : SubscriptionFeeDetails=new SubscriptionFeeDetails(); 
+  subscriptionFeeDetailObjNew : SubscriptionFeeDetails[]; 
   constructor(private formBuilder: FormBuilder,private router: Router, private service : LoginSignupService) { }
 
   ngOnInit() {
@@ -42,7 +42,7 @@ onSubmit(obj) {
     this.service.addFeeDetails(this.subscriptionFeeDetailObj).subscribe( data =>{
         this.subscriptionFeeDetailObjNew=data;
        if(this.subscriptionFeeDetailObjNew==null)
-       alert("email id already registered! Please registered with another email id");
+       alert("please do agian");
        else
        {
         alert("Payment done SuccessFully.");

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   countries = [{'id':1, 'name':'India'}, {'id':2, 'name': 'USA'}, {'id':3, 'name': 'UK'}];
   logSign : LoginSignup = new LoginSignup();
-  logSignNew : LoginSignup = new LoginSignup();  
+  logSignNew : LoginSignup[]; 
   constructor(private formBuilder: FormBuilder,private router: Router, private service : LoginSignupService) { }
 
   ngOnInit() {
@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
   get f() { return this.registerForm['controls']; }
 
   onSubmit(obj) {
+      
       this.submitted = true;
         this.logSign.firstName=obj.firstName;
         this.logSign.lastName=obj.lastName;
@@ -46,12 +47,11 @@ export class LoginComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
-      
         this.service.addUser(this.logSign).subscribe( data =>{
-            this.logSignNew=data;
+            this.logSignNew=data;   
            if(this.logSignNew==null)
            alert("email id already registered! Please registered with another email id");
-           else
+           else  
            {
            
             alert("User created SuccessFully.");

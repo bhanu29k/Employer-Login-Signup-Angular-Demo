@@ -20,19 +20,19 @@ const httpOptions={
 export class LoginSignupService { 
 
   constructor(private http : HttpClient) { } 
-  private userUrl = 'http://localhost:9988';
+  userUrl = 'http://localhost:9988';
 
   public requestLogin(email,password) {
   //  alert(this.userUrl+"/login/"+email);
-    return this.http.get<LoginSignup>(this.userUrl+"/employer/login/emp/"+email+"/"+password);
+    return this.http.get<LoginSignup[]>(this.userUrl+"/employer/login/emp/"+email+"/"+password);
   }
 
   public addUser(loginsignup) {
-    return this.http.post<LoginSignup>(this.userUrl+"/employer/signup/emp",loginsignup);
+    return this.http.post<LoginSignup[]>(this.userUrl+"/employer/signup/emp",loginsignup);
   }
   
   public addFeeDetails(feeDetails) {
-    return this.http.post<SubscriptionFeeDetails>(this.userUrl+"/employer/payfee",feeDetails);
+    return this.http.post<SubscriptionFeeDetails[]>(this.userUrl+"/employer/payfee",feeDetails);
   }
   
   

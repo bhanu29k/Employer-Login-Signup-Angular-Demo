@@ -11,7 +11,7 @@
                         <input type="text" formControlName="bankName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bankName.errors }" />
                         <div *ngIf="submitted && f.bankName.errors" class="invalid-feedback">
                             <div *ngIf="f.bankName.errors.required">Bank Name is required</div>
-                            <div *ngIf="f.bankName.hasError('pattern')"><b>First letter must be capital and rest must be small case, No space in between</b></div>
+                            <div *ngIf="f.bankName.hasError('pattern')"><strong>First letter must be capital and rest must be small case, No space in between</strong></div>
                         </div>
                     </div>
                    
@@ -20,7 +20,7 @@
                         <input type="text" formControlName="cardName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardName.errors }" />
                         <div *ngIf="submitted && f.cardName.errors" class="invalid-feedback">
                             <div *ngIf="f.cardName.errors.required">Card Name is required</div>
-                            <div *ngIf="f.cardName.hasError('pattern')"><b>First letter must be capital and rest must be small case, No space in between</b></div>
+                            <div *ngIf="f.cardName.hasError('pattern')"><strong>First letter must be capital and rest must be small case, No space in between</strong></div>
                         </div>
                     </div>
                    
@@ -46,7 +46,7 @@
                                   <input type="text" formControlName="cardNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardNo.errors }" />
                                   <div *ngIf="submitted && f.cardNo.errors" class="invalid-feedback">
                                       <div *ngIf="f.cardNo.errors.required">Card No is required </div>
-                                      <div *ngIf="f.cardNo.hasError('pattern')"><b>Card No must be exact 8 digit long</b></div>
+                                      <div *ngIf="f.cardNo.hasError('pattern')"><strong>Card No must be exact 8 digit long</strong></div>
                                   </div>
                               </div>
 

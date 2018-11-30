@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {HttpModule} from '@angular/http';
 import { SubscriptionFeeComponent } from './subscription-fee/subscription-fee.component';
+import { SubscriptionFeeDetails } from './subscription-fee-details';
+import { LoginSignupService } from './login-signup.service';
+import { Observable} from 'rxjs-compat/Observable';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,11 @@ import { SubscriptionFeeComponent } from './subscription-fee/subscription-fee.co
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    HttpModule
+    HttpClientTestingModule,
+    HttpModule,
+    Observable
   ],
-  providers: [],
+  providers: [SubscriptionFeeDetails,LoginSignupService,LoginComponent,SignupComponent,SubscriptionFeeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

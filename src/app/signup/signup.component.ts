@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   logSign : LoginSignup = new LoginSignup();
-  logSignNew : LoginSignup = new LoginSignup();
+  logSignNew : LoginSignup[];
   constructor(private formBuilder: FormBuilder,private router: Router, private service : LoginSignupService,private route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -23,10 +23,11 @@ export class SignupComponent implements OnInit {
       empId: ['',[Validators.required]],
       password: ['',[Validators.required]]
         });
-        this.route.paramMap.subscribe((params:ParamMap)=>{
+   /*     this.route.paramMap.subscribe((params:ParamMap)=>{
           let id2=parseInt(params.get("id"));
           this.id1=id2;
-        })
+        });
+        */
   }
 
   get f() { return this.loginForm['controls']; }
@@ -34,12 +35,13 @@ export class SignupComponent implements OnInit {
   onSubmit(values) {
     this.submitted = true;
     // stop here if form is invalid
+    this.logSign.empId=values.empId;
+    this.logSign.password=values.password;
     if (this.loginForm.invalid) {
         return;
     }  
-    this.logSign.empId=values.empId;
-    this.logSign.password=values.password;
-    this.service.requestLogin(values.empId,values.password).subscribe( data =>{
+   
+    this.service.requestLogin(this.logSign.empId,this.logSign.password).subscribe( data =>{
       this.logSignNew=data;
       if(this.logSignNew!=null)
       alert("successfully login");

@@ -11,7 +11,7 @@
                       <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                       <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                           <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                          <div *ngIf="f.firstName.hasError('pattern')"><b>First letter must be capital and rest must be small case, No space in between</b></div>
+                          <div *ngIf="f.firstName.hasError('pattern')"><strong>First letter must be capital and rest must be small case, No space in between</strong></div>
                       </div>
                   </div>
 
@@ -20,7 +20,7 @@
                       <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
                       <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                           <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                          <div *ngIf="f.lastName.hasError('pattern')"><b>First letter must be capital and rest must be small case, No space in between</b></div>
+                          <div *ngIf="f.lastName.hasError('pattern')"><strong>First letter must be capital and rest must be small case, No space in between</strong></div>
                       </div>
                   </div>
                   <div class="form-group">
